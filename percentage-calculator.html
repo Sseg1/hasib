@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Percentage Calculator — Percent Of, Percent Change, Discounts | hasibai</title>
+<meta name="description" content="Work out a percentage of a number, what percent one number is of another, and percentage increase or decrease. Shows the working for every answer.">
+<link rel="canonical" href="https://hasibai.com/percentage-calculator.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles.css">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6021012628075208" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap head-in">
+    <a class="mark" href="/">hasib<span>ai</span></a>
+    <nav class="nav">
+      <a class="nav-link" href="/loan-calculator.html">Finance</a>
+      <a class="nav-link" href="/bmi-calculator.html">Health</a>
+      <a class="nav-link" href="/percentage-calculator.html">Math</a>
+      <div class="menu-wrap">
+        <button class="nav-btn" data-menu-btn aria-expanded="false">All calculators ▾</button>
+        <div class="menu" data-menu data-open="false">
+          <div class="menu-cat">Finance</div>
+          <a href="/loan-calculator.html">Loan payment calculator</a>
+          <div class="menu-cat">Health</div>
+          <a href="/bmi-calculator.html">BMI calculator</a>
+          <a href="/calorie-calculator.html">Daily calorie calculator</a>
+          <div class="menu-cat">Math</div>
+          <a href="/percentage-calculator.html">Percentage calculator</a>
+          <div class="menu-cat">Everyday</div>
+          <a href="/age-calculator.html">Age calculator</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <p class="eyebrow" style="margin-top:44px">Math</p>
+  <h1>Percentage calculator</h1>
+  <p class="lede" style="max-width:60ch;color:var(--ink-2)">Three of the questions people actually ask about percentages, each with the arithmetic shown.</p>
+
+  <div class="calc-grid" style="margin-top:34px">
+    <div class="panel">
+      <p class="err" id="err"></p>
+      <div class="field">
+        <label for="mode">What do you want to work out?</label>
+        <select id="mode">
+          <option value="of" selected>What is X% of Y?</option>
+          <option value="is">X is what percent of Y?</option>
+          <option value="chg">Percentage change from X to Y</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="a" id="la">X</label>
+        <input id="a" type="number" inputmode="decimal" value="15" step="any">
+      </div>
+      <div class="field">
+        <label for="b" id="lb">Y</label>
+        <input id="b" type="number" inputmode="decimal" value="200" step="any">
+      </div>
+      <button class="btn" id="go">Calculate</button>
+    </div>
+
+    <div>
+      <div class="tape" id="tape">
+        <div class="tape-head">Result</div>
+        <div class="tape-body"><div class="tape-empty">Choose a question and enter your two numbers.</div></div>
+      </div>
+      <div class="ad ad-side">Ad slot — sidebar</div>
+    </div>
+  </div>
+
+  <div class="ad">Ad slot — below tool</div>
+
+  <section class="prose">
+    <h2>The three calculations</h2>
+    <div class="formula">X% of Y&nbsp; = &nbsp;(X ÷ 100) × Y<br>
+    X as a % of Y&nbsp; = &nbsp;(X ÷ Y) × 100<br>
+    Change from X to Y&nbsp; = &nbsp;((Y − X) ÷ X) × 100</div>
+    <p>The third one is the one that trips people up, because the denominator is the <em>starting</em> value. Percentage change always measures against where you began, not where you ended.</p>
+
+    <h2>Why an increase and a decrease don't cancel out</h2>
+    <p>If a $100 item rises 20% it becomes $120. If that $120 then falls 20%, it does not return to $100 — it lands at $96, because the 20% is now being taken from a larger base. The same asymmetry explains why a stock that drops 50% needs a 100% gain to break even.</p>
+    <p>This matters in any situation where you're comparing a rise and a fall of the same stated size. They're only equal in percentage terms, never in absolute terms.</p>
+
+    <h2>Percentage points are not percentages</h2>
+    <p>If an interest rate moves from 4% to 5%, that's a rise of one percentage point — but a 25% increase in the rate itself. News reports and adverts frequently blur the two, and the difference is usually large enough to change what the number means. When you see a claim like "rates up 25%", check which of the two is being described.</p>
+
+    <h2>Working out a discount</h2>
+    <p>For a price cut, the shortcut is to calculate what you'll pay rather than what you'll save. An item reduced by 30% costs 70% of the original, so a $80 jacket at 30% off is 0.70 × 80 = $56. One multiplication instead of two steps, and less room for error.</p>
+    <p>Stacked discounts multiply rather than add. A 20% reduction followed by a further 10% off leaves you paying 0.8 × 0.9 = 0.72, so 28% off — not 30%.</p>
+
+    <h2>Common questions</h2>
+    <details><summary>How do I add a percentage to a number?</summary>
+      <p>Multiply by 1 plus the percentage as a decimal. Adding 15% to 200 is 200 × 1.15 = 230. To take 15% off instead, multiply by 0.85.</p></details>
+    <details><summary>How do I calculate a tip?</summary>
+      <p>For 15%, take 10% by moving the decimal point one place left, then add half of that again. On a $64 bill: $6.40 plus $3.20 is $9.60. For 20%, double the 10% figure.</p></details>
+    <details><summary>What if the starting value is zero?</summary>
+      <p>Percentage change is undefined when the starting value is zero, because the calculation would divide by zero. Any growth from nothing is infinite in percentage terms, which is why reports usually describe it in absolute numbers instead.</p></details>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-in">
+      <p>© <span id="yr">2026</span> hasibai.com</p>
+      <nav>
+        <a href="/about.html">About &amp; contact</a>
+        <a href="/privacy.html">Privacy policy</a>
+        <a href="/terms.html">Terms of use</a>
+      </nav>
+    </div>
+    <p class="disclaimer">These calculators are provided for general information and educational use. Check anything important independently before acting on it.</p>
+  </div>
+</footer>
+
+<script src="/assets/site.js"></script>
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+var tape = document.getElementById('tape');
+var err  = document.getElementById('err');
+var mode = document.getElementById('mode');
+var la = document.getElementById('la'), lb = document.getElementById('lb');
+
+var LABELS = {
+  of:  ['Percentage (X)', 'Of this number (Y)'],
+  is:  ['This number (X)', 'Is what percent of (Y)'],
+  chg: ['Starting value (X)', 'Ending value (Y)']
+};
+
+mode.addEventListener('change', function () {
+  la.textContent = LABELS[mode.value][0];
+  lb.textContent = LABELS[mode.value][1];
+  calc();
+});
+
+function calc() {
+  var a = parseFloat(document.getElementById('a').value);
+  var b = parseFloat(document.getElementById('b').value);
+  if (!isFinite(a) || !isFinite(b)) return showError(err, 'Enter a number in both fields.');
+
+  var m = mode.value, rows, note;
+
+  if (m === 'of') {
+    var r1 = a / 100 * b;
+    rows = [['Percentage', num(a, 2) + '%'], ['Of', num(b, 2)],
+            [num(a, 2) + '% of ' + num(b, 2), num(r1, 2), true]];
+    note = '(' + num(a, 2) + ' ÷ 100) × ' + num(b, 2) + ' = ' + num(r1, 2);
+  } else if (m === 'is') {
+    if (b === 0) return showError(err, 'Y cannot be zero — the calculation would divide by zero.');
+    var r2 = a / b * 100;
+    rows = [['Value', num(a, 2)], ['Out of', num(b, 2)],
+            ['As a percentage', num(r2, 2) + '%', true]];
+    note = '(' + num(a, 2) + ' ÷ ' + num(b, 2) + ') × 100 = ' + num(r2, 2) + '%';
+  } else {
+    if (a === 0) return showError(err, 'The starting value cannot be zero — percentage change is undefined.');
+    var r3 = (b - a) / a * 100;
+    rows = [['From', num(a, 2)], ['To', num(b, 2)],
+            ['Absolute change', num(b - a, 2)],
+            ['Direction', r3 > 0 ? 'Increase' : (r3 < 0 ? 'Decrease' : 'No change')],
+            ['Percentage change', num(r3, 2) + '%', true]];
+    note = '((' + num(b, 2) + ' − ' + num(a, 2) + ') ÷ ' + num(a, 2) + ') × 100 = ' + num(r3, 2) + '%';
+  }
+  showError(err, '');
+  printTape(tape, rows, note);
+}
+
+document.getElementById('go').addEventListener('click', calc);
+['a','b'].forEach(function (id) {
+  document.getElementById(id).addEventListener('keydown', function (e) { if (e.key === 'Enter') calc(); });
+});
+calc();
+</script>
+</body>
+</html>

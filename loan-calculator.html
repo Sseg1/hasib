@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Loan Payment Calculator — Monthly Payment &amp; Total Interest | hasibai</title>
+<meta name="description" content="Work out the monthly payment, total interest and total repaid on any loan, car finance or mortgage. Shows the amortisation formula and every input used.">
+<link rel="canonical" href="https://hasibai.com/loan-calculator.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles.css">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6021012628075208" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap head-in">
+    <a class="mark" href="/">hasib<span>ai</span></a>
+    <nav class="nav">
+      <a class="nav-link" href="/loan-calculator.html">Finance</a>
+      <a class="nav-link" href="/bmi-calculator.html">Health</a>
+      <a class="nav-link" href="/percentage-calculator.html">Math</a>
+      <div class="menu-wrap">
+        <button class="nav-btn" data-menu-btn aria-expanded="false">All calculators ▾</button>
+        <div class="menu" data-menu data-open="false">
+          <div class="menu-cat">Finance</div>
+          <a href="/loan-calculator.html">Loan payment calculator</a>
+          <div class="menu-cat">Health</div>
+          <a href="/bmi-calculator.html">BMI calculator</a>
+          <a href="/calorie-calculator.html">Daily calorie calculator</a>
+          <div class="menu-cat">Math</div>
+          <a href="/percentage-calculator.html">Percentage calculator</a>
+          <div class="menu-cat">Everyday</div>
+          <a href="/age-calculator.html">Age calculator</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <p class="eyebrow" style="margin-top:44px">Finance</p>
+  <h1>Loan payment calculator</h1>
+  <p class="lede" style="max-width:60ch;color:var(--ink-2)">Enter what you're borrowing, the annual rate your lender quoted, and how long you'll take to repay it.</p>
+
+  <div class="calc-grid" style="margin-top:34px">
+    <div class="panel">
+      <p class="err" id="err"></p>
+      <div class="field">
+        <label for="amount">Loan amount</label>
+        <input id="amount" type="number" inputmode="decimal" value="20000" min="0" step="any">
+      </div>
+      <div class="field">
+        <label for="rate">Annual interest rate <span class="hint">— as a percentage, e.g. 6.5</span></label>
+        <input id="rate" type="number" inputmode="decimal" value="6" min="0" step="any">
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="term">Term</label>
+          <input id="term" type="number" inputmode="numeric" value="5" min="1" step="any">
+        </div>
+        <div class="field">
+          <label for="unit">Term unit</label>
+          <select id="unit">
+            <option value="12" selected>Years</option>
+            <option value="1">Months</option>
+          </select>
+        </div>
+      </div>
+      <button class="btn" id="go">Calculate payment</button>
+    </div>
+
+    <div>
+      <div class="tape" id="tape">
+        <div class="tape-head">Result</div>
+        <div class="tape-body"><div class="tape-empty">Enter your figures and press Calculate.</div></div>
+      </div>
+      <div class="ad ad-side">Ad slot — sidebar</div>
+    </div>
+  </div>
+
+  <div class="ad">Ad slot — below tool</div>
+
+  <section class="prose">
+    <h2>How the monthly payment is worked out</h2>
+    <p>A standard loan is <em>amortising</em>: you pay the same amount every month, and each payment covers the interest that accrued that month plus a slice of the balance. Early on, most of the payment is interest. Late on, most of it is principal. The payment itself never changes.</p>
+    <div class="formula">M = P × r / (1 − (1 + r)<sup>−n</sup>)<br><br>
+    P = amount borrowed<br>
+    r = monthly rate = annual rate ÷ 12 ÷ 100<br>
+    n = total number of monthly payments</div>
+    <p>The two places people go wrong are both in that second line. The rate has to be converted from annual to monthly, and from a percentage to a decimal. A 6% annual rate is 0.005 per month, not 6 and not 0.06. This calculator does both conversions for you and prints the monthly rate on the tape so you can see it.</p>
+
+    <h2>What the total interest figure tells you</h2>
+    <p>Total interest is simply the monthly payment multiplied by the number of payments, minus the amount you borrowed. It's the number worth comparing between offers, because a longer term almost always produces a smaller monthly payment while costing considerably more overall.</p>
+    <p>A $20,000 loan at 6% is a clear example. Over three years the payment is around $608 and you pay roughly $1,900 in interest. Stretch the same loan to seven years and the payment drops to about $292 — but the interest climbs past $4,500. The monthly figure looks better; the loan is worse.</p>
+
+    <h2>What this calculator doesn't include</h2>
+    <p>It models the loan itself and nothing around it. Real quotes often add arrangement or origination fees, early-repayment penalties, and — for mortgages — property tax, buildings insurance and any mortgage insurance premium. Those are commonly bundled into the figure a lender shows you, so a lender's monthly quote will usually be higher than the number here.</p>
+    <p>It also assumes a fixed rate for the whole term. If your rate is variable or fixed only for an introductory period, this shows the payment while that rate applies, not afterwards.</p>
+
+    <h2>Common questions</h2>
+    <details><summary>Is APR the same as the interest rate?</summary>
+      <p>No. The interest rate is the cost of borrowing the money. APR is meant to fold in compulsory fees as well, which is why it's usually the higher of the two. If you want this calculator to approximate the true cost including fees, enter the APR rather than the headline rate.</p></details>
+    <details><summary>Does this work for a mortgage?</summary>
+      <p>Yes — a repayment mortgage uses exactly this formula. Enter the loan amount after your deposit, the rate, and the term in years. Just remember it won't include tax, insurance or any escrow amount your lender collects alongside the payment.</p></details>
+    <details><summary>What happens if I pay extra each month?</summary>
+      <p>Anything above the scheduled payment normally comes off the principal, which shortens the term and cuts total interest — often by a surprising amount. This calculator doesn't model overpayments; it shows the scheduled position only.</p></details>
+    <details><summary>Why is my lender's monthly figure different?</summary>
+      <p>Usually fees, insurance, or a different day-count convention. Some lenders also calculate interest daily rather than monthly, which shifts the result slightly. A difference of a few dollars is normal; a large gap usually means the quote includes something extra.</p></details>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-in">
+      <p>© <span id="yr">2026</span> hasibai.com</p>
+      <nav>
+        <a href="/about.html">About &amp; contact</a>
+        <a href="/privacy.html">Privacy policy</a>
+        <a href="/terms.html">Terms of use</a>
+      </nav>
+    </div>
+    <p class="disclaimer">This calculator is provided for general information and is not financial advice. Results are estimates and may not reflect the terms a lender offers you. Confirm any figure with the lender before committing to a loan.</p>
+  </div>
+</footer>
+
+<script src="/assets/site.js"></script>
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+var tape = document.getElementById('tape');
+var err  = document.getElementById('err');
+
+function calc() {
+  var P = parseFloat(document.getElementById('amount').value);
+  var annual = parseFloat(document.getElementById('rate').value);
+  var term = parseFloat(document.getElementById('term').value);
+  var mult = parseFloat(document.getElementById('unit').value);
+
+  if (!isFinite(P) || P <= 0)      return showError(err, 'Enter a loan amount greater than zero.');
+  if (!isFinite(annual) || annual < 0) return showError(err, 'Enter an interest rate of zero or more.');
+  if (!isFinite(term) || term <= 0)    return showError(err, 'Enter a term greater than zero.');
+  showError(err, '');
+
+  var n = Math.round(term * mult);
+  var r = annual / 100 / 12;
+  var M = r === 0 ? P / n : P * r / (1 - Math.pow(1 + r, -n));
+  var total = M * n;
+  var interest = total - P;
+
+  printTape(tape, [
+    ['Amount borrowed', money(P)],
+    ['Rate (annual)',   annual.toFixed(3) + '%'],
+    ['Rate (monthly)',  (r * 100).toFixed(4) + '%'],
+    ['Payments',        n + ' months'],
+    ['Total interest',  money(interest)],
+    ['Total repaid',    money(total)],
+    ['Monthly payment', money(M), true]
+  ], 'M = P·r / (1 − (1+r)<sup>−n</sup>) &nbsp;·&nbsp; interest is total repaid minus principal.');
+}
+
+document.getElementById('go').addEventListener('click', calc);
+['amount','rate','term'].forEach(function (id) {
+  document.getElementById(id).addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') calc();
+  });
+});
+calc();
+</script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Age Calculator — Exact Age in Years, Months and Days | hasibai</title>
+<meta name="description" content="Calculate exact age from a date of birth in years, months and days, plus total weeks, days and hours lived, and the countdown to the next birthday.">
+<link rel="canonical" href="https://hasibai.com/age-calculator.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles.css">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6021012628075208" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap head-in">
+    <a class="mark" href="/">hasib<span>ai</span></a>
+    <nav class="nav">
+      <a class="nav-link" href="/loan-calculator.html">Finance</a>
+      <a class="nav-link" href="/bmi-calculator.html">Health</a>
+      <a class="nav-link" href="/percentage-calculator.html">Math</a>
+      <div class="menu-wrap">
+        <button class="nav-btn" data-menu-btn aria-expanded="false">All calculators ▾</button>
+        <div class="menu" data-menu data-open="false">
+          <div class="menu-cat">Finance</div>
+          <a href="/loan-calculator.html">Loan payment calculator</a>
+          <div class="menu-cat">Health</div>
+          <a href="/bmi-calculator.html">BMI calculator</a>
+          <a href="/calorie-calculator.html">Daily calorie calculator</a>
+          <div class="menu-cat">Math</div>
+          <a href="/percentage-calculator.html">Percentage calculator</a>
+          <div class="menu-cat">Everyday</div>
+          <a href="/age-calculator.html">Age calculator</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <p class="eyebrow" style="margin-top:44px">Everyday</p>
+  <h1>Age calculator</h1>
+  <p class="lede" style="max-width:60ch;color:var(--ink-2)">Exact age between two dates, counted the way birthdays are actually counted — whole months first, then the remaining days.</p>
+
+  <div class="calc-grid" style="margin-top:34px">
+    <div class="panel">
+      <p class="err" id="err"></p>
+      <div class="field">
+        <label for="dob">Date of birth</label>
+        <input id="dob" type="date" value="1995-06-15">
+      </div>
+      <div class="field">
+        <label for="on">Age on this date <span class="hint">— defaults to today</span></label>
+        <input id="on" type="date">
+      </div>
+      <button class="btn" id="go">Calculate age</button>
+    </div>
+
+    <div>
+      <div class="tape" id="tape">
+        <div class="tape-head">Result</div>
+        <div class="tape-body"><div class="tape-empty">Enter a date of birth to begin.</div></div>
+      </div>
+      <div class="ad ad-side">Ad slot — sidebar</div>
+    </div>
+  </div>
+
+  <div class="ad">Ad slot — below tool</div>
+
+  <section class="prose">
+    <h2>How age is counted here</h2>
+    <p>Age is worked out by counting calendar parts rather than dividing total days by 365. The calculator finds the largest number of whole months that fit between the two dates, converts that to years and months, and then counts the days left over. Where a month is shorter than the birth day &mdash; 31 January plus one month, for instance &mdash; the anniversary clamps to the last day of that month.</p>
+    <p>This is the method used almost everywhere for legal and everyday purposes, and it's why someone can be "23 years, 0 months and 30 days" old: the final month simply hasn't completed.</p>
+
+    <h2>The leap year problem</h2>
+    <p>Dividing days by 365 drifts. Over 40 years it loses roughly ten days, because a leap year is inserted every four years — except in century years not divisible by 400. The year 2000 was a leap year; 1900 was not, and 2100 will not be. Counting by calendar parts avoids the drift entirely, so this calculator does that instead.</p>
+    <p>People born on 29 February are a genuine edge case. There is no legal consensus across countries about whether their birthday falls on 28 February or 1 March in common years. This calculator treats 28 February as the day the year completes in a common year, which is the convention most software uses, but check your local rules if it matters for a document.</p>
+
+    <h2>Common questions</h2>
+    <details><summary>Can I calculate age between two past dates?</summary>
+      <p>Yes. The second field defaults to today, but you can set it to any date — useful for working out how old someone was at a particular event, or the gap between two dates for a form.</p></details>
+    <details><summary>Why don't the total days match years × 365?</summary>
+      <p>Because of leap days. The total days figure is a true count between the two dates, so it will be higher than a 365-a-year estimate by roughly one day for every four years elapsed.</p></details>
+    <details><summary>Is anything I enter stored?</summary>
+      <p>No. The calculation runs entirely in your browser. The dates aren't sent to a server and aren't saved anywhere.</p></details>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-in">
+      <p>© <span id="yr">2026</span> hasibai.com</p>
+      <nav>
+        <a href="/about.html">About &amp; contact</a>
+        <a href="/privacy.html">Privacy policy</a>
+        <a href="/terms.html">Terms of use</a>
+      </nav>
+    </div>
+    <p class="disclaimer">These calculators are provided for general information and educational use. For anything with legal effect, confirm dates against the relevant official rules.</p>
+  </div>
+</footer>
+
+<script src="/assets/site.js"></script>
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+var tape = document.getElementById('tape');
+var err  = document.getElementById('err');
+var onEl = document.getElementById('on');
+
+function todayISO() {
+  var t = new Date();
+  return t.getFullYear() + '-' + String(t.getMonth() + 1).padStart(2, '0') + '-' + String(t.getDate()).padStart(2, '0');
+}
+onEl.value = todayISO();
+
+function parseISO(s) {
+  var p = (s || '').split('-');
+  if (p.length !== 3) return null;
+  var d = new Date(+p[0], +p[1] - 1, +p[2]);
+  if (isNaN(d) || d.getMonth() !== +p[1] - 1) return null;
+  return d;
+}
+function daysInMonth(y, m) { return new Date(y, m + 1, 0).getDate(); }
+
+/* Add n months, clamping to the last day of the target month.
+   31 Jan + 1 month = 28/29 Feb, which keeps the day count non-negative. */
+function addMonths(d, n) {
+  var t = new Date(d.getFullYear(), d.getMonth() + n, 1);
+  t.setDate(Math.min(d.getDate(), daysInMonth(t.getFullYear(), t.getMonth())));
+  return t;
+}
+
+var MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+
+function fmt(d) { return d.getDate() + ' ' + MONTHS[d.getMonth()] + ' ' + d.getFullYear(); }
+
+function calc() {
+  var from = parseISO(document.getElementById('dob').value);
+  var to   = parseISO(onEl.value);
+  if (!from) return showError(err, 'Enter a valid date of birth.');
+  if (!to)   return showError(err, 'Enter a valid end date.');
+  if (to < from) return showError(err, 'The end date is before the date of birth.');
+  showError(err, '');
+
+  // whole months elapsed, then the days left over
+  var months = (to.getFullYear() - from.getFullYear()) * 12 + (to.getMonth() - from.getMonth());
+  if (addMonths(from, months) > to) months -= 1;
+  var anchor = addMonths(from, months);
+  var d = Math.round((to - anchor) / 86400000);
+  var y = Math.floor(months / 12);
+  var m = months % 12;
+
+  var totalDays = Math.round((to - from) / 86400000);
+
+  // today is the birthday when no months and no days remain past the last anniversary
+  var nb = (m === 0 && d === 0) ? to : addMonths(from, (y + 1) * 12);
+  var untilBirthday = Math.round((nb - to) / 86400000);
+
+  printTape(tape, [
+    ['Born', fmt(from)],
+    ['Counted to', fmt(to)],
+    ['Total months', num(months)],
+    ['Total weeks', num(Math.floor(totalDays / 7))],
+    ['Total days', num(totalDays)],
+    ['Total hours', num(totalDays * 24)],
+    ['Next birthday', fmt(nb) + ' (' + untilBirthday + 'd)'],
+    ['Age', y + ' y  ' + m + ' m  ' + d + ' d', true]
+  ], 'Counted by calendar parts \u2014 whole years, then whole months, then remaining days.');
+}
+
+document.getElementById('go').addEventListener('click', calc);
+document.getElementById('dob').addEventListener('change', calc);
+onEl.addEventListener('change', calc);
+calc();
+</script>
+</body>
+</html>
